@@ -10,9 +10,6 @@ public class DispositivoTecnologico {
 	private String tipo;
 	public TiendaTecnologica unnamed_TiendaTecnologica_;
 
-	public DispositivoTecnologico() {
-	}
-
 	public String getMarca() {
 		return this.marca;
 	}
@@ -85,16 +82,16 @@ public class DispositivoTecnologico {
 		this.tipo = tipo;
 	}
 
-	public DispositivoTecnologico(String marca, String memoriaRam, String memoriaDeAlmacenamiento, String procesador, String modelo, int añoDeFabricacion, int precio, int stock, String tipo) {
+	public DispositivoTecnologico() {
 		super();
 	}
 
 	Notebook notebook = new Notebook("1024x768", new String(), 5000);
 	String tipoNotebook = notebook.getTipo(); // Devuelve "Notebook"
 
-	ComputadorDeEscritorio computadorDeEscritorio = new ComputadorDeEscritorio("040715", new String(), 2050.0, 345.0);
+	ComputadorDeEscritorio computadorDeEscritorio = new ComputadorDeEscritorio("PCI", "ATX","monocasco");
 	String tipoComputadorDeEscritorio = computadorDeEscritorio.getTipo(); // Devuelve "Computador de escritorio"
 
-	Tablet tablet = new Tablet("040715", new String(), 2050.0, 345.0);
+	Tablet tablet = new Tablet("1144p");
 	String tipoTablet = tablet.getTipo(); // Devuelve "Tablet"
 }

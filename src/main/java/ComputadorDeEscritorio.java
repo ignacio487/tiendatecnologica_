@@ -29,7 +29,7 @@ public class ComputadorDeEscritorio extends DispositivoTecnologico {
 	}
 
 	public ComputadorDeEscritorio(String tarjetaDeVideo, String fuenteDePoder, String chasis) {
-		super(tarjetaDeVideo,fuenteDePoder,chasis);
+		super();
 	}
 
 	public String getTipo() {

@@ -15,23 +15,44 @@ public class TiendaTecnologica {
 		this.direccion = direccion;
 	}
 
-	public ArrayList<Cliente> agregarCliente(Cliente cliente) {
-		throw new UnsupportedOperationException();
+	public void agregarCliente(Cliente cliente) {
+		this.cliente.add(cliente);
 	}
 
 	public ArrayList<DispositivoTecnologico> catalogo() {
-		throw new UnsupportedOperationException();
+		ArrayList<DispositivoTecnologico> dispositivosDisponibles = new ArrayList<>();
+		// Llenar la lista 'dispositivosDisponibles' con los dispositivos disponibles.
+		return dispositivosDisponibles;
 	}
 
 	public ArrayList<DispositivoTecnologico> buscarDispositivosPorTipo(String tipo) {
-		throw new UnsupportedOperationException();
+		//busca el dispositivo tecnologico por tipo
+		ArrayList<DispositivoTecnologico> dispositivosPorTipo = new ArrayList<>();
+		for (DispositivoTecnologico dispositivo : DispositivoTecnologico) {
+			if (dispositivo.getTipo().equalsIgnoreCase(tipo)) {
+				dispositivosPorTipo.add(dispositivo); //agrega un nuevo dispositivo por tipo
+			}
+		}
+		return dispositivosPorTipo;
 	}
 
 	public ArrayList<DispositivoTecnologico> buscarDispositivosPorMarca(String marca) {
-		throw new UnsupportedOperationException();
+		ArrayList<DispositivoTecnologico> dispositivosPorMarca = new ArrayList<>();
+		for (DispositivoTecnologico dispositivo : DispositivoTecnologico) {
+			if (dispositivo.getMarca().equalsIgnoreCase(marca)) {
+				dispositivosPorMarca.add(dispositivo); //agrega un nuevo dispositivo por marca
+			}
+		}
+		return dispositivosPorMarca;
 	}
 
 	public ArrayList<DispositivoTecnologico> buscarDispositivosPorModelo(String modelo) {
-		throw new UnsupportedOperationException();
+		ArrayList<DispositivoTecnologico> dispositivosPorModelo = new ArrayList<>();
+		for (DispositivoTecnologico dispositivo : DispositivoTecnologico) {
+			if (dispositivo.getModelo().equalsIgnoreCase(modelo)) {
+				dispositivosPorModelo.add(dispositivo);
+			}
+		}
+		return dispositivosPorModelo;
 	}
 }
