@@ -4,6 +4,9 @@ public class Compra {
 	private int fechaDeCompra;
 	private Cliente cliente;
 
+	public ArrayList<Cliente> clientes;
+	public ArrayList<DispositivoTecnologico> dispositivosComprados; //creamos "dispositivos comprados" para justificar la resta y suma de stock
+
 	public int getFechaDeCompra() {
 		return this.fechaDeCompra;
 	}
@@ -12,15 +15,30 @@ public class Compra {
 		this.fechaDeCompra = fechaDeCompra;
 	}
 
-	public ArrayList<Cliente> asociarCliente(Cliente cliente) {
-		throw new UnsupportedOperationException();
+	//Asociar cliente a una compra
+	public Cliente getCliente() {
+		return this.cliente;
 	}
 
-	public ArrayList<DispositivoTecnologico> listaDeDispositivosTecnologicos(DispositivoTecnologico dispositivo) {
-		throw new UnsupportedOperationException();
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
-	public ArrayList<DispositivoTecnologico> agregarOQuitarProductos(int stock) {
-		throw new UnsupportedOperationException();
+	public ArrayList<DispositivoTecnologico> getDispositivosComprados() {
+		return this.dispositivosComprados;
+	}
+
+	public void listaDeDispositivosTecnologicos(DispositivoTecnologico dispositivo) {
+		if (dispositivosComprados == null) {
+			dispositivosComprados = new ArrayList<>();
+		}
+
+		dispositivosComprados.add(dispositivo);
+	}
+
+	public void agregarOQuitarProductos(int stock) {
+		if (dispositivosComprados != null) {
+			dispositivosComprados.remove(dispositivosComprados);
+		}
 	}
 }
