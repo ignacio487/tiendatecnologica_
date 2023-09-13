@@ -17,10 +17,10 @@ public class Tablet extends DispositivoTecnologico {
 	}
 
 	public Tablet(String resolucionDeLaPantalla) {
-		throw new UnsupportedOperationException();
+		super();
 	}
 
 	public String getTipo() {
-		throw new UnsupportedOperationException();
+		return getTipo();
 	}
 }

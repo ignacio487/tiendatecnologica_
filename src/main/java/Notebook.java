@@ -3,6 +3,10 @@ public class Notebook extends DispositivoTecnologico {
 	private String tipoDeTeclado;
 	private int bateria;
 
+	public Notebook(String resolucionDePantalla, String tipoDeTeclado, int bateria) {
+		super();
+	}
+
 	public String getResolucionDePantalla() {
 		return this.resolucionDePantalla;
 	}
@@ -28,10 +32,6 @@ public class Notebook extends DispositivoTecnologico {
 	}
 
 	public String getTipo() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Notebook(String resolucionDePantalla, String tipoDeTeclado, int bateria) {
-		throw new UnsupportedOperationException();
+		return getTipo();
 	}
 }

@@ -60,6 +60,6 @@ public class Cliente {
 	}
 
 	public Cliente(String nombre, String correoElectronico, int numeroDeContacto, String ciudad, String estadoCivil, String apellido) {
-		throw new UnsupportedOperationException();
+		super();
 	}
 }

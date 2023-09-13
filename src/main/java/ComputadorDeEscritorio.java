@@ -29,10 +29,10 @@ public class ComputadorDeEscritorio extends DispositivoTecnologico {
 	}
 
 	public ComputadorDeEscritorio(String tarjetaDeVideo, String fuenteDePoder, String chasis) {
-		throw new UnsupportedOperationException();
+		super(tarjetaDeVideo,fuenteDePoder,chasis);
 	}
 
 	public String getTipo() {
-		throw new UnsupportedOperationException();
+		return getTipo();
 	}
 }

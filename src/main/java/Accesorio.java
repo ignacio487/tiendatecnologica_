@@ -38,6 +38,6 @@ public class Accesorio {
 	}
 
 	public Accesorio(String lapiz, String funda, String colorDeFunda, String cargador) {
-		throw new UnsupportedOperationException();
+		super();
 	}
 }
