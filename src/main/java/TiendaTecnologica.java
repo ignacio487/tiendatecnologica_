@@ -28,7 +28,7 @@ public class TiendaTecnologica {
 	public ArrayList<DispositivoTecnologico> buscarDispositivosPorTipo(String tipo) {
 		//busca el dispositivo tecnologico por tipo
 		ArrayList<DispositivoTecnologico> dispositivosPorTipo = new ArrayList<>();
-		for (DispositivoTecnologico dispositivo : DispositivoTecnologico) {
+		for (DispositivoTecnologico dispositivo : dispositivosPorTipo) {
 			if (dispositivo.getTipo().equalsIgnoreCase(tipo)) {
 				dispositivosPorTipo.add(dispositivo); //agrega un nuevo dispositivo por tipo
 			}
@@ -38,7 +38,7 @@ public class TiendaTecnologica {
 
 	public ArrayList<DispositivoTecnologico> buscarDispositivosPorMarca(String marca) {
 		ArrayList<DispositivoTecnologico> dispositivosPorMarca = new ArrayList<>();
-		for (DispositivoTecnologico dispositivo : DispositivoTecnologico) {
+		for (DispositivoTecnologico dispositivo: dispositivosPorMarca) {
 			if (dispositivo.getMarca().equalsIgnoreCase(marca)) {
 				dispositivosPorMarca.add(dispositivo); //agrega un nuevo dispositivo por marca
 			}
@@ -48,7 +48,7 @@ public class TiendaTecnologica {
 
 	public ArrayList<DispositivoTecnologico> buscarDispositivosPorModelo(String modelo) {
 		ArrayList<DispositivoTecnologico> dispositivosPorModelo = new ArrayList<>();
-		for (DispositivoTecnologico dispositivo : DispositivoTecnologico) {
+		for (DispositivoTecnologico dispositivo : dispositivosPorModelo) {
 			if (dispositivo.getModelo().equalsIgnoreCase(modelo)) {
 				dispositivosPorModelo.add(dispositivo);
 			}
