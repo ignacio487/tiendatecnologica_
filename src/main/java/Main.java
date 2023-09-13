@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         // Aquí puedes iniciar tu programa
@@ -6,8 +8,8 @@ public class Main {
         TiendaTecnologica tienda = new TiendaTecnologica();
 
         // Crear algunos clientes
-        Cliente cliente1 = new Cliente("Nombre1", "Apellido1", "correo1@example.com", "1234567890", "Soltero", "Ciudad1");
-        Cliente cliente2 = new Cliente("Nombre2", "Apellido2", "correo2@example.com", "9876543210", "Casado", "Ciudad2");
+        Cliente cliente1 = new Cliente("Rodolfo", "Venegas", "r.venegas04@ufromail.cl", "lautaro", "Soltero", "Ciudad1");
+        Cliente cliente2 = new Cliente("Luis", "Diaz", "l.diaz07@oufromail.cl", "limache", "Casado", "Ciudad2");
 
         // Agregar clientes a la tienda
         tienda.agregarCliente(cliente1);
@@ -18,15 +20,15 @@ public class Main {
         DispositivoTecnologico dispositivo2 = new DispositivoTecnologico(/* especifica los atributos */);
 
         // Agregar dispositivos al catálogo de la tienda
-        tienda.agregarDispositivo(dispositivo1);
-        tienda.agregarDispositivo(dispositivo2);
+        tienda.agregarDispositivos(dispositivo1);
+        tienda.agregarDispositivos(dispositivo2);
 
         // Realizar una compra
         Compra compra = new Compra();
         compra.setFechaDeCompra(new Date());
-        compra.asociarCliente(cliente1);
-        compra.agregarDispositivo(dispositivo1);
-        compra.agregarDispositivo(dispositivo2);
+        compra.clientes(cliente1);
+        compra.dispositivosComprados(dispositivo1);
+        compra.dispositivosComprados(dispositivo2);
 
         // Agregar la compra a la lista de compras de la tienda
         tienda.agregarCompra(compra);

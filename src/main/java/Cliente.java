@@ -59,7 +59,7 @@ public class Cliente {
 		this.apellido = apellido;
 	}
 
-	public Cliente(String nombre, String correoElectronico, int numeroDeContacto, String ciudad, String estadoCivil, String apellido) {
+	public Cliente(String nombre, String correoElectronico, String numeroDeContacto, String ciudad, String estadoCivil, String apellido) {
 		super();
 	}
 }

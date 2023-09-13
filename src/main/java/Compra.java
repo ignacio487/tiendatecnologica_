@@ -15,20 +15,11 @@ public class Compra {
 		this.fechaDeCompra = fechaDeCompra;
 	}
 
-	//Asociar cliente a una compra
-	public Cliente getCliente() {
-		return this.cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
 	public ArrayList<DispositivoTecnologico> getDispositivosComprados() {
 		return this.dispositivosComprados;
 	}
 
-	public void listaDeDispositivosTecnologicos(DispositivoTecnologico dispositivo) {
+	public void agregarDispositivos(DispositivoTecnologico dispositivo) {
 		if (dispositivosComprados == null) {
 			dispositivosComprados = new ArrayList<>();
 		}
@@ -36,9 +27,14 @@ public class Compra {
 		dispositivosComprados.add(dispositivo);
 	}
 
-	public void agregarOQuitarProductos(int stock) {
+	public void QuitarProductos(int stock) {
 		if (dispositivosComprados != null) {
 			dispositivosComprados.remove(dispositivosComprados);
 		}
+	}
+
+	//asociar cliente a una compra
+	public void clientes(Cliente cliente1) {
+
 	}
 }

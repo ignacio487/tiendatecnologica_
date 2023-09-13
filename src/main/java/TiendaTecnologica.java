@@ -19,6 +19,10 @@ public class TiendaTecnologica {
 		this.cliente.add(cliente);
 	}
 
+	public void agregarCompra(Compra compra) {
+		this.compra.add(compra);
+	}
+
 	public ArrayList<DispositivoTecnologico> catalogo() {
 		ArrayList<DispositivoTecnologico> dispositivosDisponibles = new ArrayList<>();
 		// Llenar la lista 'dispositivosDisponibles' con los dispositivos disponibles.
@@ -55,4 +59,5 @@ public class TiendaTecnologica {
 		}
 		return dispositivosPorModelo;
 	}
+
 }
