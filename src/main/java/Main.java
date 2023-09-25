@@ -1,6 +1,10 @@
 import java.util.ArrayList;
+import java.util.Date; // Para la fecha
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
-public class Main {
+public abstract class Main {
     public static void main(String[] args) {
         // Aquí puedes iniciar tu programa
 
@@ -8,8 +12,8 @@ public class Main {
         TiendaTecnologica tienda = new TiendaTecnologica();
 
         // Crear algunos clientes
-        Cliente cliente1 = new Cliente("Rodolfo", "Venegas", "r.venegas04@ufromail.cl", "lautaro", "Soltero", "Ciudad1");
-        Cliente cliente2 = new Cliente("Luis", "Diaz", "l.diaz07@oufromail.cl", "limache", "Casado", "Ciudad2");
+        Cliente cliente1 = new Cliente("Rodolfo", "r.venegas04@ufromail.cl", "+56956783486", "lautaro", "Soltero", "Venegas");
+        Cliente cliente2 = new Cliente("Luis", "l.diaz07@oufromail.cl", "+56939712653", "limache", "Casado", "Diaz");
 
         // Agregar clientes a la tienda
         tienda.agregarCliente(cliente1);
@@ -20,8 +24,8 @@ public class Main {
         DispositivoTecnologico dispositivo2 = new DispositivoTecnologico(/* especifica los atributos */);
 
         // Agregar dispositivos al catálogo de la tienda
-        tienda.agregarDispositivos(dispositivo1);
-        tienda.agregarDispositivos(dispositivo2);
+        Compra.agregarDispositivos(dispositivo1);
+        Compra.agregarDispositivos(dispositivo2);
 
         // Realizar una compra
         Compra compra = new Compra();
@@ -39,6 +43,44 @@ public class Main {
         ArrayList<DispositivoTecnologico> dispositivosPorTipo = tienda.buscarDispositivosPorTipo("Portátil");
         for (DispositivoTecnologico dispositivo : dispositivosPorTipo) {
             System.out.println("Dispositivo: " + dispositivo.getMarca() + " " + dispositivo.getModelo());
+        }
+    }
+
+    //Ahora procederemos a guardar la informacion en un archivo TXT
+    public static void guardarInformacionEnTXT(TiendaTecnologica tienda) {
+        String filePath = "informacion.txt"; // Ruta del archivo TXT
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            // Guardar información de la tienda
+            writer.write("Información de la Tienda Tecnológica:\n");
+            writer.write("Dirección: " + tienda.getDireccion() + "\n\n");
+
+            // Guardar información de clientes
+            writer.write("Clientes:\n");
+            for (Cliente cliente : tienda.getClientes()) {
+                writer.write("Nombre: " + cliente.getNombre() + "\n");
+                writer.write("Correo Electrónico: " + cliente.getCorreoElectronico() + "\n");
+                writer.write("Número de Contacto: " + cliente.getNumeroDeContacto() + "\n");
+                writer.write("Estado Civil: " + cliente.getEstadoCivil() + "\n");
+                writer.write("Ciudad: " + cliente.getCiudad() + "\n");
+                writer.write("\n");
+            }
+
+            // Guardar información de compras (puedes adaptar esto según tus necesidades)
+            writer.write("Compras realizadas:\n");
+            for (Compra compra : tienda.getCompras()) {
+                writer.write("Fecha de Compra: " + compra.getFechaDeCompra() + "\n");
+                writer.write("Cliente: " + cliente.getNombre() + "\n");
+                writer.write("Dispositivos Comprados:\n");
+                for (DispositivoTecnologico dispositivo : compra.getDispositivosComprados()) {
+                    writer.write("- " + dispositivo.getMarca() + " " + dispositivo.getModelo() + "\n");
+                }
+                writer.write("\n");
+            }
+
+            System.out.println("La información se ha guardado en el archivo " + filePath);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

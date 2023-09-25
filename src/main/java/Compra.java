@@ -35,6 +35,10 @@ public class Compra {
 
 	//asociar cliente a una compra
 	public void clientes(Cliente cliente1) {
+		this.cliente=cliente1;
+	}
+
+	public void dispositivosComprados(DispositivoTecnologico dispositivo1) {
 
 	}
 }
