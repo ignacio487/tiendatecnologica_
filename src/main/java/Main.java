@@ -1,3 +1,5 @@
+import GestorArchivos.GestorDatos;
+
 import java.util.ArrayList;
 import java.util.Date; // Para la fecha
 import java.io.BufferedWriter;
@@ -29,7 +31,7 @@ public abstract class Main {
 
         // Realizar una compra
         Compra compra = new Compra();
-        compra.setFechaDeCompra(new Date());
+        compra.getFechaDeCompra();
         compra.clientes(cliente1);
         compra.dispositivosComprados(dispositivo1);
         compra.dispositivosComprados(dispositivo2);
@@ -45,8 +47,7 @@ public abstract class Main {
             System.out.println("Dispositivo: " + dispositivo.getMarca() + " " + dispositivo.getModelo());
         }
     }
-
-    //Ahora procederemos a guardar la informacion en un archivo TXT
+    // Al finalizar el programa, guardaremos la información en un archivo TXT
     public static void guardarInformacionEnTXT(TiendaTecnologica tienda) {
         String filePath = "informacion.txt"; // Ruta del archivo TXT
 
@@ -57,7 +58,7 @@ public abstract class Main {
 
             // Guardar información de clientes
             writer.write("Clientes:\n");
-            for (Cliente cliente : tienda.getClientes()) {
+            for (Cliente cliente : GestorDatos.guardarCliente()) {
                 writer.write("Nombre: " + cliente.getNombre() + "\n");
                 writer.write("Correo Electrónico: " + cliente.getCorreoElectronico() + "\n");
                 writer.write("Número de Contacto: " + cliente.getNumeroDeContacto() + "\n");
@@ -68,9 +69,9 @@ public abstract class Main {
 
             // Guardar información de compras (puedes adaptar esto según tus necesidades)
             writer.write("Compras realizadas:\n");
-            for (Compra compra : tienda.getCompras()) {
+            for (Compra compra : TiendaTecnologica.agregarCompra()) {
                 writer.write("Fecha de Compra: " + compra.getFechaDeCompra() + "\n");
-                writer.write("Cliente: " + cliente.getNombre() + "\n");
+                writer.write("Cliente: " + GestorDatos.guardarCliente().getNombre() + "\n");
                 writer.write("Dispositivos Comprados:\n");
                 for (DispositivoTecnologico dispositivo : compra.getDispositivosComprados()) {
                     writer.write("- " + dispositivo.getMarca() + " " + dispositivo.getModelo() + "\n");

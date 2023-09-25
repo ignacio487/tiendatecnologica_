@@ -7,7 +7,7 @@ public class GestorDatos<Cliente> {
 	public ArrayList<Cliente> datosCliente(String nombre){
 		ArrayList<Cliente> resultados = new ArrayList<>();
 		for (Cliente cliente : clientes) {
-			if (Cliente.getNombre().equalsIgnoreCase()) {
+			if (cliente.getNombre().equalsIgnoreCase()) {
 				resultados.add(cliente);
 			}
 		}
@@ -22,4 +22,4 @@ public class GestorDatos<Cliente> {
 			System.out.println("El cliente ya existe en la lista.");
 		}
 	}
-	}
+}
